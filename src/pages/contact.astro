@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import { siteConfig, socialLinks } from "../config/site";
+---
+
+<BaseLayout title="Contact" description="Ways to get in touch with Shaw Nguyen.">
+  <Container>
+    <section class="page-shell">
+      <p class="section-eyebrow">Contact</p>
+      <h1>Open to thoughtful conversations and interesting work.</h1>
+      <p class="page-intro">
+        There is no backend form here by design. Static contact details keep the site simple and dependable.
+      </p>
+
+      <div class="contact-grid" style="margin-top: 2rem;">
+        <article class="contact-card">
+          <h3>Email</h3>
+          <p>
+            Use <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> once you replace the placeholder
+            with your preferred address.
+          </p>
+          <a class="button-secondary" href={`mailto:${siteConfig.email}`}>Send an email</a>
+        </article>
+
+        <article class="contact-card">
+          <h3>Profiles</h3>
+          <p>Social links are centralized so footer and contact page updates happen in one place.</p>
+          <ul class="social-links">
+            {
+              socialLinks.map((link) => (
+                <li>
+                  <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </article>
+
+        <article class="contact-card">
+          <h3>Availability</h3>
+          <p>
+            Add your preferred response time, collaboration focus, or current availability here when you are
+            ready to make the site more personal.
+          </p>
+        </article>
+      </div>
+    </section>
+  </Container>
+</BaseLayout>

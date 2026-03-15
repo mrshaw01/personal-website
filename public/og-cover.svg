@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Portfolio cover image">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f6f3ee" />
+      <stop offset="100%" stop-color="#ddd4c4" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="930" cy="120" r="220" fill="#17594a" fill-opacity="0.08" />
+  <circle cx="260" cy="560" r="280" fill="#17594a" fill-opacity="0.08" />
+  <rect x="72" y="72" width="1056" height="486" rx="32" fill="#ffffff" fill-opacity="0.7" stroke="#17594a" stroke-opacity="0.12" />
+  <text x="120" y="240" fill="#181613" font-family="Georgia, serif" font-size="92">Shaw Nguyen</text>
+  <text x="120" y="328" fill="#5a554c" font-family="Helvetica, Arial, sans-serif" font-size="36">Software Engineer</text>
+  <text x="120" y="412" fill="#181613" font-family="Helvetica, Arial, sans-serif" font-size="40">
+    Static-first Astro portfolio built for Cloudflare Pages
+  </text>
+</svg>

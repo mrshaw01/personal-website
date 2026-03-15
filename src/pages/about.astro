@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import { siteConfig } from "../config/site";
+---
+
+<BaseLayout title="About" description={siteConfig.longBio}>
+  <Container>
+    <section class="page-shell">
+      <p class="section-eyebrow">About</p>
+      <h1>Thoughtful software, built with restraint.</h1>
+      <p class="page-intro">
+        This page is powered by the longer bio in `src/config/site.ts`, making it straightforward to revise
+        your narrative later.
+      </p>
+
+      <div class="prose-wrap">
+        <div class="prose">
+          <p>{siteConfig.longBio}</p>
+          <p>
+            I prefer web experiences that are clear, fast, and intentionally scoped. That usually means
+            starting static-first, keeping dependencies lean, and making content easy to update without
+            unraveling the whole system.
+          </p>
+          <p>
+            When you are ready, this section can expand with a fuller story about your background, current
+            focus, favorite tools, or the type of work you want more of.
+          </p>
+        </div>
+      </div>
+    </section>
+  </Container>
+</BaseLayout>
