@@ -1,0 +1,29 @@
+<button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme-toggle>
+  <span class="theme-toggle__sun" aria-hidden="true">Light</span>
+  <span class="theme-toggle__moon" aria-hidden="true">Dark</span>
+</button>
+
+<script is:inline>
+  const storageKey = "theme-preference";
+  const root = document.documentElement;
+  const button = document.querySelector("[data-theme-toggle]");
+
+  const getPreferredTheme = () => {
+    const savedTheme = localStorage.getItem(storageKey);
+    if (savedTheme === "light" || savedTheme === "dark") return savedTheme;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  };
+
+  const applyTheme = (theme) => {
+    root.dataset.theme = theme;
+    button?.setAttribute("aria-pressed", String(theme === "dark"));
+  };
+
+  applyTheme(getPreferredTheme());
+
+  button?.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    localStorage.setItem(storageKey, nextTheme);
+    applyTheme(nextTheme);
+  });
+</script>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import Section from "../components/Section.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { siteConfig, socialLinks } from "../config/site";
+
+const featuredProjects = siteConfig.projects.filter((project) => project.featured).slice(0, 3);
+---
+
+<BaseLayout>
+  <Container>
+    <section class="hero">
+      <div class="hero__panel">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Portfolio</p>
+          <h1>Modern engineering, calm execution, and maintainable results.</h1>
+          <p class="hero__lead">{siteConfig.shortBio}</p>
+          <div class="hero__actions">
+            <a class="button" href="/projects/">View projects</a>
+            <a class="button-secondary" href="/contact/">Get in touch</a>
+          </div>
+          <div class="inline-links">
+            {socialLinks.slice(0, 3).map((link) => <a href={link.href}>{link.label}</a>)}
+          </div>
+        </div>
+
+        <div class="metrics" aria-label="Highlights">
+          <div class="metric">
+            <strong>{siteConfig.projects.length}</strong>
+            <span>Projects ready to feature</span>
+          </div>
+          <div class="metric">
+            <strong>Static-first</strong>
+            <span>Fast pages with minimal moving parts</span>
+          </div>
+          <div class="metric">
+            <strong>Cloudflare</strong>
+            <span>Prepared for free Pages hosting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Section
+      eyebrow="Selected work"
+      title="A concise portfolio that can grow with your work"
+      description="Project cards are driven from a single config file, so future updates stay simple."
+      id="featured-projects"
+    >
+      <div class="project-grid">
+        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </Section>
+
+    <Section
+      eyebrow="Approach"
+      title="Built to feel professional today and stay easy to edit later"
+      description="The site favors small reusable pieces, centralized content, and plain Astro patterns over heavy abstractions."
+    >
+      <div class="feature-grid">
+        <div>
+          <h3>Content-first structure</h3>
+          <p class="section-description">
+            Personal details, links, and projects live in one file so updates are obvious.
+          </p>
+        </div>
+        <div>
+          <h3>Minimal dependencies</h3>
+          <p class="section-description">
+            Astro plus sitemap keeps the stack light, fast, and friendly to future maintenance.
+          </p>
+        </div>
+        <div>
+          <h3>Static deployment</h3>
+          <p class="section-description">
+            Cloudflare Pages can host the final `dist` output without a backend, database, or auth layer.
+          </p>
+        </div>
+      </div>
+    </Section>
+  </Container>
+</BaseLayout>

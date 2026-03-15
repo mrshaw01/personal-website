@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SN monogram">
+  <rect width="64" height="64" rx="16" fill="#17594a" />
+  <path d="M20 19h9.2c7.4 0 12.8 4.2 12.8 11.2 0 7-5.4 11.2-12.8 11.2H25v11.6H20V19Zm9.2 18c4.3 0 7.4-2.2 7.4-6.8 0-4.6-3.1-6.8-7.4-6.8H25V37h4.2ZM43.5 19H49v34h-5.4L29.8 31.1V53h-5.4V19h5.1l14 22V19Z" fill="#f6f3ee" />
+</svg>

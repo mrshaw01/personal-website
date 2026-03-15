@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { siteConfig } from "../config/site";
+---
+
+<BaseLayout title="Projects" description="Selected projects and placeholders ready to customize.">
+  <Container>
+    <section class="page-shell">
+      <p class="section-eyebrow">Projects</p>
+      <h1>Selected work and ready-to-edit placeholders.</h1>
+      <p class="page-intro">
+        Replace the placeholder summaries, links, and tags in `src/config/site.ts` as your real project
+        details become available.
+      </p>
+
+      <div class="project-grid" style="margin-top: 2rem;">
+        {siteConfig.projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
+  </Container>
+</BaseLayout>

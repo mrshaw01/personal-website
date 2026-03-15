@@ -1,0 +1,33 @@
+---
+import Container from "./Container.astro";
+import { siteConfig, socialLinks } from "../config/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <Container>
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__title">{siteConfig.name}</p>
+        <p class="site-footer__copy">
+          Built with Astro and deployed as a static site on Cloudflare Pages.
+        </p>
+      </div>
+
+      <ul class="social-links" aria-label="Social links">
+        {
+          socialLinks.map((link) => (
+            <li>
+              <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <p class="site-footer__meta">© {year} {siteConfig.name}. Update content in `src/config/site.ts`.</p>
+  </Container>
+</footer>

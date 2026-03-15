@@ -1,0 +1,29 @@
+---
+import type { Project } from "../config/site";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-card__header">
+    <h3>{project.name}</h3>
+    <div class="project-card__links">
+      <a href={project.url} target="_blank" rel="noreferrer">Live</a>
+      {project.repo && (
+        <a href={project.repo} target="_blank" rel="noreferrer">
+          Code
+        </a>
+      )}
+    </div>
+  </div>
+
+  <p>{project.summary}</p>
+
+  <ul class="tag-list" aria-label={`${project.name} technologies`}>
+    {project.tags.map((tag) => <li>{tag}</li>)}
+  </ul>
+</article>

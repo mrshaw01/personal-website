@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/Container.astro";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+);
+---
+
+<BaseLayout title="Blog" description="A lightweight Astro content collection for future writing.">
+  <Container>
+    <section class="page-shell">
+      <p class="section-eyebrow">Blog</p>
+      <h1>Lightweight writing scaffold.</h1>
+      <p class="page-intro">
+        Posts live in `src/content/blog/` and are rendered through Astro content collections.
+      </p>
+
+      <div class="blog-grid" style="margin-top: 2rem;">
+        {
+          posts.map((post) => (
+            <article class="blog-card">
+              <p class="blog-meta">{post.data.pubDate.toLocaleDateString("en-US", { dateStyle: "long" })}</p>
+              <h3>
+                <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+              </h3>
+              <p>{post.data.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </Container>
+</BaseLayout>
