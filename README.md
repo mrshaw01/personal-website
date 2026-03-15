@@ -34,6 +34,59 @@ A modern, minimal personal website built with Astro and prepared for static depl
    npm run build
    ```
 
+## Formatting and pre-commit
+
+This repo uses Prettier for consistent formatting across the main text-based file types in the project, including:
+
+- `.astro`
+- `.ts`
+- `.mjs`
+- `.css`
+- `.json`
+- `.md`
+- `.yaml`
+- `.svg`
+
+Available commands:
+
+```bash
+npm run format
+npm run format:check
+```
+
+To enable automatic formatting before each commit with `pre-commit`:
+
+1. Create a local virtual environment:
+
+   ```bash
+   python3 -m venv .venv
+   ```
+
+2. Install `pre-commit` into that environment:
+
+   ```bash
+   .venv/bin/python -m pip install pre-commit
+   ```
+
+3. Install the Git hook:
+
+   ```bash
+   .venv/bin/pre-commit install
+   ```
+
+4. Format the whole repo once:
+
+   ```bash
+   .venv/bin/pre-commit run --all-files
+   ```
+
+After that, the pre-commit hook will run automatically on every commit and apply the same formatting rules.
+
+GitHub Actions also runs the same `pre-commit` checks in CI on pushes to `main` and on pull requests:
+
+- Workflow file: `.github/workflows/pre-commit.yml`
+- CI command: `pre-commit run --all-files --show-diff-on-failure`
+
 ## Project structure
 
 ```text
