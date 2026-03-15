@@ -31,7 +31,7 @@ type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  siteUrl: "https://shaw.pages.dev",
+  siteUrl: "https://personal-website-963.pages.dev",
   name: "Shaw Nguyen",
   title: "Software Engineer",
   shortBio:
@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
       name: "personal-website",
       summary:
         "A modern Astro portfolio built for Cloudflare Pages with reusable components, dark mode, and centralized content.",
-      url: "https://shaw.pages.dev",
+      url: "https://personal-website-963.pages.dev",
       repo: "https://github.com/mrshaw01/personal-website",
       tags: ["Astro", "Cloudflare Pages", "Static Site"],
       featured: true,

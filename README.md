@@ -138,7 +138,7 @@ This site builds to static files, which makes it compatible with free hosting on
 
 After you create the Pages project, update the production URL in `src/config/site.ts` and `astro.config.mjs` to match your real domain, for example:
 
-- `https://shaw.pages.dev`
+- `https://personal-website-963.pages.dev`
 - or your custom domain
 
 ## Notes
